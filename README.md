@@ -4,7 +4,7 @@ Steps to set up the app on development mode
 
 1. Install the node dependencies `npm install`
 
-2. Run de database
+2. Run the database
 
 ```
 docker compose up -d
@@ -14,7 +14,7 @@ docker compose up -d
 
 4. Replace the env variables
 
-5. Do the prisma setup.
+5. Do the prisma setup
 
 6. Execute the SEED for data generation
 
@@ -35,7 +35,3 @@ npx prisma init
 npx prisma migrate dev
 npx prisma generate
 ```
-
-# Production
-
-# Stage
