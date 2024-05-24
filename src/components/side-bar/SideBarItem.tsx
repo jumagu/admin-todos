@@ -7,7 +7,7 @@ interface Props {
   title: string;
   path: string;
   icon: React.ReactNode;
-  closeSideMenu: () => {};
+  closeSideMenu: () => void;
 }
 
 export const SideBarItem = ({ title, path, icon, closeSideMenu }: Props) => {
