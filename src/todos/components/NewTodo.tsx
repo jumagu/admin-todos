@@ -10,7 +10,7 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import * as todosApi from "@/todos/helpers/todos.helper";
 import { addTodo, deleteCompletedTodos } from "../actions/todo.actions";
 
-export const NewTodo = () => {
+export const NewTodo = ({ completedTodos }: { completedTodos: boolean }) => {
   const router = useRouter();
 
   const [description, setDescription] = useState("");
@@ -58,6 +58,7 @@ export const NewTodo = () => {
 
       <button
         type="button"
+        disabled={completedTodos}
         className="w- flex items-center justify-center gap-1 p-2 rounded text-white bg-red-500 hover:bg-red-600 active:bg-red-700 disabled:bg-red-300 transition-all"
         onClick={() => deleteCompletedTodos()}
       >

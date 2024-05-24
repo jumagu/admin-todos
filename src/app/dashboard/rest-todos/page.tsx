@@ -22,9 +22,11 @@ export default async function RestTodosPage() {
     orderBy: { description: "asc" },
   });
 
+  const completedTodos = !(todos.filter((todo) => todo.completed).length > 0);
+
   return (
     <>
-      <NewTodo />
+      <NewTodo completedTodos={completedTodos} />
       <TodosGrid todos={todos} />
     </>
   );
