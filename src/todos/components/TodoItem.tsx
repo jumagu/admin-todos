@@ -54,7 +54,7 @@ export const TodoItem = ({ todo, toggleTodo }: Props) => {
           )}
         </div>
 
-        <div className="text-left">{todoOptimistic.description}</div>
+        <div className="text-left truncate">{todoOptimistic.description}</div>
       </div>
     </div>
   );
