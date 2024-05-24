@@ -2,7 +2,15 @@
 
 import { createContext, useState } from "react";
 
-export const UiContext = createContext({});
+interface UiContextType {
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const UiContext = createContext<UiContextType>({
+  isSidebarOpen: false,
+  setIsSidebarOpen: () => {},
+});
 
 export default function UiProvider({
   children,
