@@ -64,7 +64,7 @@ export const Aside = ({ userName, userImage, userRoles }: Props) => {
     <aside
       className={`${
         isSidebarOpen ? "" : "ml-[-100%]"
-      } md:ml-0 fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition-all duration-300 md:w-4/12 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]`}
+      } md:ml-0 fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition-all duration-300 md:w-4/12 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] overflow-auto`}
     >
       <div>
         <div className="-mx-6 px-6 py-4">
@@ -95,7 +95,7 @@ export const Aside = ({ userName, userImage, userRoles }: Props) => {
           </span>
         </div>
 
-        <ul className="space-y-2 tracking-wide mt-8">
+        <ul className="space-y-2 tracking-wide my-8">
           {menuItems.map((menuItem) => (
             <SideBarItem
               key={menuItem.path}
