@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { cookies } from "next/headers";
 
-import { CiChat1, CiSearch, CiShoppingBasket } from "react-icons/ci";
+import { CiChat1, CiSearch } from "react-icons/ci";
 
+import { CartLink } from "./CartLink";
 import { ToggleMenuButton } from "./ToggleMenuButton";
 
 export const TopMenu = () => {
@@ -48,18 +48,7 @@ export const TopMenu = () => {
           <button className="flex items-center justify-center w-10 h-10 rounded-xl border bg-gray-100 focus:bg-gray-100 active:bg-gray-200">
             <CiChat1 size={25} />
           </button>
-          <Link
-            href="/dashboard/cart"
-            className="flex items-center justify-center w-14 h-10 rounded-xl border bg-gray-100 focus:bg-gray-100 active:bg-gray-200"
-          >
-            <CiShoppingBasket
-              className="relative bottom-[3px] right-[-1px]"
-              size={25}
-            />
-            <span className="relative bottom-[-7px] right-[1px] text-xs font-medium">
-              {getTotalCount()}
-            </span>
-          </Link>
+          <CartLink totalCount={getTotalCount()} />
         </div>
       </div>
     </div>
