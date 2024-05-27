@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 interface UiContextType {
   isSidebarOpen: boolean;
@@ -18,6 +18,10 @@ export default function UiProvider({
   children: React.ReactNode;
 }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isSidebarOpen ? "hidden" : "auto";
+  }, [isSidebarOpen]);
 
   return (
     <UiContext.Provider value={{ isSidebarOpen, setIsSidebarOpen }}>
